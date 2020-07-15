@@ -5,6 +5,8 @@ import android.os.Bundle
 import android.view.Window
 import android.opengl.GLSurfaceView
 
+import assimp.Importer;
+
 class MainActivity : Activity() {
 
     private lateinit var glView: GLSurfaceView
@@ -17,5 +19,7 @@ class MainActivity : Activity() {
         // as the ContentView for this Activity.
         glView = PeshGLSurfaceView(this)
         setContentView(glView)
+
+        val scene = Importer().readFile("models/simple.assbin");
     }
 }
